@@ -24,7 +24,14 @@ class Board extends React.Component {
   render() {
     return (
       <div>
-        
+        {[0, 1, 2].map(parentElement => (
+          <div className="board-row" key={parentElement}>
+            {[0, 1, 2].map(childElement => (
+              <span key={childElement}>{this.renderSquare(childElement + parentElement * 3)}</span>
+            ))}
+          </div>
+        )
+        )}
       </div>
     )
   }
@@ -39,7 +46,8 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
-      squareClicked: []
+      squareClicked: [],
+      sortRaising: true
     }
   }
   showColumnAndRow(i) {
@@ -63,6 +71,10 @@ class Game extends React.Component {
       squareClicked: this.state.squareClicked.slice(0, this.state.stepNumber).concat([this.showColumnAndRow(i)]),
     })
 
+  }
+
+  handleSort = () => {
+    this.setState({ sortRaising: !this.state.sortRaising })
   }
 
   jumpTo(step) {
@@ -110,7 +122,14 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <br />
+          <button
+            onClick={this.handleSort}
+            style={{ marginLeft: '10px' }}
+          >
+            Sortuj
+          </button>
+          <ul>{this.state.sortRaising ? moves : moves.slice().reverse()}</ul>
         </div>
       </div>
     )
