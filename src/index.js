@@ -51,6 +51,7 @@ class Game extends React.Component {
       history: [{
         squares: Array(9).fill(null)
       }],
+      stepNumber: 0,
       xIsNext: true
     }
   }
@@ -81,7 +82,7 @@ class Game extends React.Component {
         'Przejdź do ruchu #' + move :
         'Przejdź na początek gry'
       return (
-        <li>
+        <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       )
