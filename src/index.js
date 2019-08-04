@@ -24,21 +24,7 @@ class Board extends React.Component {
   render() {
     return (
       <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        
       </div>
     )
   }
@@ -76,7 +62,7 @@ class Game extends React.Component {
       xIsNext: !this.state.xIsNext,
       squareClicked: this.state.squareClicked.slice(0, this.state.stepNumber).concat([this.showColumnAndRow(i)]),
     })
-    console.log(this.state.squareClicked)
+
   }
 
   jumpTo(step) {
@@ -92,7 +78,6 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares)
 
     const moves = history.map((step, move) => {
-      console.log(step)
       const desc = move ?
         'Przejdź do ruchu #' + move + ` (${this.state.squareClicked[move - 1]})` :
         'Przejdź na początek gry'
