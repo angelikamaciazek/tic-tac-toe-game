@@ -50,8 +50,8 @@ class Game extends React.Component {
     stepNumber: 0,
     squareClicked: [],
     sortAsc: true,
-    winningLine: null
   }
+  winningLine: null
 
   calculateWinner(squares) {
     const lines = [
@@ -134,7 +134,7 @@ class Game extends React.Component {
     if (winner) {
       status = 'Wygrywa: ' + winner
     } else {
-      status = 'Następny gracz: ' + (this.state.xIsNext ? 'X' : 'O')
+      status = this.state.stepNumber >= 9 ? 'Remis!' : 'Następny gracz: ' + (this.state.xIsNext ? 'X' : 'O')
     }
 
     return (
