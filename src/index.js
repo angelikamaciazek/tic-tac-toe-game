@@ -7,7 +7,7 @@ const Square = (props) => (
   <button
     className="square"
     onClick={props.onClick}
-    style={props.isWinningSquare ? { backgroundColor: 'cadetblue' } : null}
+    style={props.isWinningSquare ? { backgroundColor: '#fff', color: '#222' } : null}
   >
     {props.value}
   </button>
@@ -120,7 +120,7 @@ class Game extends React.Component {
         'Przejdź na początek gry'
       return (
         <li key={move}>
-          <button
+          <button className='step-number'
             onClick={() => this.jumpTo(move)}
             style={move === this.state.stepNumber ? { fontWeight: 'bold' } : null}
           >
@@ -151,7 +151,6 @@ class Game extends React.Component {
           <br />
           <button
             onClick={this.handleSort}
-            style={{ marginLeft: '10px' }}
           >
             Sortuj
           </button>

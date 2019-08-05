@@ -1,10 +1,12 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    background: url(img/WEBSITE-WOOD-BACKGROUND.jpg);
   }
   
   ol, ul {
-    padding-left: 30px;
+    list-style: none;
+    padding:0;
   }
   
   .board-row:after {
@@ -18,18 +20,19 @@ body {
   }
   
   .square {
-    background: #fff;
-    border: 1px solid #999;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid #fff;
     float: left;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
-    line-height: 34px;
-    height: 34px;
+    line-height: 80px;
+    height: 80px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 80px;
   }
   
   .square:focus {
@@ -43,9 +46,51 @@ body {
   .game {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 605px;
   }
   
   .game-info {
-    margin-left: 20px;
+    margin-left: 80px;
+    text-align: center;
+    height: 605px;
   }
   
+  button{ 
+    border: 1px solid #fff;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100px;
+    text-transform: uppercase;
+    padding: 5px;
+    letter-spacing: 2px;
+  }
+
+  button:hover{
+    background: #fff;
+    color: #222;
+    transition: 0.6s;
+    font-weight: bold;
+
+  }
+  .step-number{ 
+    border: 1px solid #fff;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    width: 250px;
+    height: 40px;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 5px auto;
+    letter-spacing: 1px; 
+  }
+
+  div{
+
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 18px;
+  }
